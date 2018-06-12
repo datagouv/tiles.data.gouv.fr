@@ -1,19 +1,29 @@
-import BaseMapsPreview from './base-maps-preview'
+import React from 'react'
 
-const VectorPreview = () => (
-  <BaseMapsPreview
-    title='Fond OpenMapTiles - vectoriel'
-    themes={['osm-bright']}>
-    <div>
-      <h4>Duis et fringilla turpis</h4>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et fringilla turpis, quis consequat quam. Nulla condimentum pretium ex vel gravida. Mauris tincidunt tellus at sem efficitur, eu imperdiet velit porta.
-      </p>
-      <p>
-        Morbi sagittis eu diam nec cursus. Duis lobortis lorem nulla, vitae placerat elit aliquet ac. In at diam est. Aenean
-      </p>
-    </div>
-  </BaseMapsPreview>
-)
+import Section from '../section'
+
+import MapPreview from './base-maps-preview/map-preview'
+import TilesUrl from './tiles-url'
+
+class VectorPreview extends React.Component {
+  render() {
+    const theme = 'osm-bright'
+    return (
+      <Section title='Fond OpenMapTiles - vectoriel'>
+        <div className='container'>
+          <MapPreview theme={theme} />
+          <h4>URL du fond de carte</h4>
+          <TilesUrl url={`https://openmaptiles.tiles.data.gouv.fr/styles/${theme}/style.json`} />
+        </div>
+        <style jsx>{`
+          .container {
+            margin: 0 auto;
+            max-width: 800px;
+          }
+        `}</style>
+      </Section>
+    )
+  }
+}
 
 export default VectorPreview

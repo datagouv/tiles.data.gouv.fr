@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "compression": "^1.7.2",
+    "copy-to-clipboard": "^3.0.8",
     "express": "^4.16.2",
     "jest": "^22.4.3",
     "next": "^5.1.0",

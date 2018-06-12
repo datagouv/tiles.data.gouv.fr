@@ -6,7 +6,7 @@ import theme from '../styles/theme'
 import Dropdown from './dropdown'
 
 const links = [
-  { text: 'Documentation', href: '/documentation' }
+  {text: 'Documentation', href: '/documentation'}
 ]
 
 export default () => (

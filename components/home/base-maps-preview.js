@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import styleTheme from '../../styles/theme'
 
 import Section from '../section'
-import ButtonLink from '../button-link'
 
 class BaseMapsPreview extends React.Component {
   constructor(props) {
@@ -22,16 +21,13 @@ class BaseMapsPreview extends React.Component {
 
   render() {
     const {selectedTheme} = this.state
-    const {title, themes, demo, reverse, children} = this.props
+    const {title, themes, reverse, children} = this.props
 
     return (
       <Section title={title}>
         <div className={`container ${reverse ? 'reverse' : ''}`}>
           <div className='content'>
             {children}
-            <div className='demo'>
-              <ButtonLink href={demo}>Voir la démo</ButtonLink>
-            </div>
           </div>
 
           <div className='preview'>
@@ -131,7 +127,6 @@ BaseMapsPreview.propTypes = {
   reverse: PropTypes.bool,
   title: PropTypes.string.isRequired,
   themes: PropTypes.array.isRequired,
-  demo: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired
 }
 

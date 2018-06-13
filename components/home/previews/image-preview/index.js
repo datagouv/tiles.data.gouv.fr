@@ -1,6 +1,8 @@
 import React from 'react'
 
-import BaseMapsPreview from './base-maps-preview'
+import BaseMapsPreview from '../base-maps-preview'
+
+import ImageTilesPreview from './image-tiles-preview'
 
 const themes = ['piano', 'forte']
 const languages = {
@@ -31,18 +33,20 @@ class ImagePreview extends React.Component {
 
   render() {
     const {theme, language} = this.state
+    const url = `https://{s}.${theme}.tiles.data.gouv.fr/${languages[language]}/{z}/{x}/{y}.png`
 
     return (
       <BaseMapsPreview
         title='Fond OpenStreetMap - image'
-
-        url={`https://{s}.${theme}.tiles.data.gouv.fr/${languages[language]}/{z}/{x}/{y}.png`}
+        url={url}
         selectedTheme={theme}
         selectedLanguage={language}
         onSelectTheme={this.handleTheme}
         onSelectLanguage={this.handleLanguage}
         themes={themes}
-        languages={Object.keys(languages)} />
+        languages={Object.keys(languages)}>
+        <ImageTilesPreview url={url} />
+      </BaseMapsPreview>
     )
   }
 }

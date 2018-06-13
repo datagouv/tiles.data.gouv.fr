@@ -4,7 +4,7 @@ import copy from 'copy-to-clipboard'
 
 import FaCopy from 'react-icons/lib/fa/copy'
 
-import theme from '../../styles/theme'
+import theme from '../../../styles/theme'
 
 class TilesUrl extends React.Component {
   constructor(props) {

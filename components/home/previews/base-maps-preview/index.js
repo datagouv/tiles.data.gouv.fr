@@ -1,15 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Section from '../../section'
+import Section from '../../../section'
 
 import TilesUrl from '../tiles-url'
-import MapPreview from './map-preview'
 import Selector from './selector'
 
 class BaseMapsPreview extends React.Component {
   render() {
-    const {title, url, selectedTheme, selectedLanguage, themes, languages, onSelectTheme, onSelectLanguage, reverse} = this.props
+    const {title, url, selectedTheme, selectedLanguage, themes, languages, onSelectTheme, onSelectLanguage, reverse, children} = this.props
 
     return (
       <Section title={title}>
@@ -28,7 +27,9 @@ class BaseMapsPreview extends React.Component {
           </div>
 
           <div className='map'>
-            <MapPreview theme={selectedTheme} />
+            <div className='preview'>
+              {children}
+            </div>
 
             <h4>URL du fond de carte</h4>
             <TilesUrl url={url} />
@@ -39,6 +40,14 @@ class BaseMapsPreview extends React.Component {
             display: flex;
             justify-content: space-between;
             align-items: center;
+          }
+
+          .map {
+            width: 50%;
+          }
+
+          .preview {
+            height: 70vh;
           }
 
           .reverse {
@@ -62,6 +71,10 @@ class BaseMapsPreview extends React.Component {
               width: 100%;
               margin: 0;
             }
+
+            .map {
+              width: 100%;
+            }
           }
         `}</style>
       </Section>
@@ -81,7 +94,9 @@ BaseMapsPreview.propTypes = {
   selectedLanguage: PropTypes.string,
   onSelectLanguage: PropTypes.func,
 
-  reverse: PropTypes.bool
+  reverse: PropTypes.bool,
+
+  children: PropTypes.node.isRequired
 }
 
 BaseMapsPreview.defaultProps = {

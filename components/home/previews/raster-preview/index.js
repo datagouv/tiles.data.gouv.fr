@@ -6,7 +6,8 @@ import RasterTilesPreview from './raster-tiles-preview'
 
 const themes = ['piano', 'forte']
 const languages = {
-  français: 'fr',
+  français: '',
+  'français (haute résolution)': '@2x',
   anglais: 'en',
   arabe: 'ar'
 }

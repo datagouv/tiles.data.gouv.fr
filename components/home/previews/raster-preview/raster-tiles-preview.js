@@ -6,37 +6,42 @@ import mapStyle from 'mapbox-gl/dist/mapbox-gl.css'
 
 class RasterTilesPreview extends React.Component {
   initMap() {
-    const {url} = this.props
-
     this.map = new mapboxgl.Map({
       container: this.mapContainer,
-      style: {
-        version: 8,
-        sources: {
-          'raster-tiles': {
-            type: 'raster',
-            tiles: ['a', 'b', 'c'].map(s => url.replace('{s}', s)),
-            tileSize: 256,
-            attribution: '© Ministère des Affaires Étrangères © Etalab © Contributeurs OpenStreetMap'
-          }
-        },
-        layers: [{
-          id: 'simple-tiles',
-          type: 'raster',
-          source: 'raster-tiles'
-        }]
-      },
       center: [1.7191, 46.7111],
-      zoom: 4
+      zoom: 4.5
     })
+  }
+
+  updateStyle() {
+    const {url} = this.props
+    const style = {
+      version: 8,
+      sources: {
+        'raster-tiles': {
+          type: 'raster',
+          tiles: ['a', 'b', 'c'].map(s => url.replace('{s}', s)),
+          tileSize: 256,
+          attribution: '© Ministère des Affaires Étrangères © Etalab © Contributeurs OpenStreetMap'
+        }
+      },
+      layers: [{
+        id: 'simple-tiles',
+        type: 'raster',
+        source: 'raster-tiles'
+      }]
+    }
+
+    this.map.setStyle(style)
   }
 
   componentDidMount() {
     this.initMap()
+    this.updateStyle()
   }
 
   componentDidUpdate() {
-    this.initMap()
+    this.updateStyle()
   }
 
   render() {

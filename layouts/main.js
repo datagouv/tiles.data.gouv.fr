@@ -45,6 +45,7 @@ class Layout extends React.Component {
         `}</style>
 
         <script src='https://cdn.polyfill.io/v2/polyfill.min.js?features=Array.prototype.includes,modernizr:es6string,modernizr:es6array,Promise,fetch' />
+        <script async defer src='https://buttons.github.io/buttons.js' />
       </div>
     )
   }

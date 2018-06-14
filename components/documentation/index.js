@@ -3,26 +3,30 @@ import Container from '../container'
 const Documentation = () => (
   <Container>
     <section>
-      <h2>Les librairies</h2>
-      <div>
-        <b><a href='https://www.mapbox.com/mapbox-gl-js/api/'>Mapbox GL JS</a></b>
-        <p>Bibliothèque de cartographie basée sur WebGL.</p>
-      </div>
+      <h2>Quelques outils de cartographie Web</h2>
 
-      <div>
-        <b><a href='http://openlayers.org/'>OpenLayers</a></b>
-        <p>Permet un affichage raster ou tuiles vectorielles.</p>
-      </div>
+      <ul>
+        <li>
+          <b><a href='https://www.mapbox.com/mapbox-gl-js/api/'>Mapbox GL JS</a></b>
+          <a className='github-button' href='https://github.com/mapbox/mapbox-gl-js' data-icon='octicon-star' data-show-count='true' aria-label='Star mapbox/mapbox-gl-js on GitHub'>Star</a>
+        </li>
 
-      <div>
-        <b><a href='http://www.leafletjs.com/'>Leaflet</a></b>
-        <p>Bibliothèque légère et open-source.</p>
-      </div>
+        <li>
+          <b><a href='http://openlayers.org/'>OpenLayers</a></b>
+          <a className='github-button' href='https://github.com/openlayers/openlayers' data-icon='octicon-star' data-show-count='true' aria-label='Star openlayers/openlayers on GitHub'>Star</a>
+        </li>
 
-      <div>
-        <b><a href='https://mapzen.com/products/tangram/'>Tangram</a></b>
-        <p>Également basée sur WebGL, elle prend en charge l’affichage vectoriel.</p>
-      </div>
+        <li>
+          <b><a href='http://www.leafletjs.com/'>Leaflet</a></b>
+          <a className='github-button' href='https://github.com/Leaflet/Leaflet' data-icon='octicon-star' data-show-count='true' aria-label='Star Leaflet/Leaflet on GitHub'>Star</a>
+        </li>
+
+        <li>
+          <b><a href='https://github.com/tangrams/tangram'>Tangram</a></b>
+          <a className='github-button' href='https://github.com/tangrams/tangram' data-icon='octicon-star' data-show-count='true' aria-label='Star tangrams/tangram on GitHub'>Star</a>
+        </li>
+
+      </ul>
     </section>
 
     <section>

@@ -5,7 +5,7 @@ import mapboxgl from 'mapbox-gl'
 import mapStyle from 'mapbox-gl/dist/mapbox-gl.css'
 
 class RasterTilesPreview extends React.Component {
-  componentDidMount() {
+  initMap() {
     const {url} = this.props
 
     this.map = new mapboxgl.Map({
@@ -15,7 +15,8 @@ class RasterTilesPreview extends React.Component {
         sources: {
           'raster-tiles': {
             type: 'raster',
-            tiles: [url.replace('{s}', 'a')],
+            tiles: ['a', 'b', 'c'].map(s => url.replace('{s}', s)),
+            tileSize: 256,
             attribution: '© Ministère des Affaires Étrangères © Etalab © Contributeurs OpenStreetMap'
           }
         },
@@ -26,8 +27,16 @@ class RasterTilesPreview extends React.Component {
         }]
       },
       center: [1.7191, 46.7111],
-      zoom: 4.5
+      zoom: 4
     })
+  }
+
+  componentDidMount() {
+    this.initMap()
+  }
+
+  componentDidUpdate() {
+    this.initMap()
   }
 
   render() {

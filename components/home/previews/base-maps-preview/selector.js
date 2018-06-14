@@ -15,12 +15,15 @@ const Selector = ({list, selected, handleSelect}) => (
     <style jsx>{`
       .selectors {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(auto, 75px));
+        grid-template-columns: repeat(auto-fill, minmax(auto, 96px));
         text-align: center;
         grid-gap: 1em;
       }
 
       .selector {
+        display: flex;
+        align-items: center;
+        justify-content: center;
         border: 1px solid ${theme.primary};
         border-radius: 4px;
         border-color: ${theme.border};

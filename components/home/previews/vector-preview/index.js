@@ -9,7 +9,7 @@ import VectorTilesPreview from './vector-tiles-preview'
 class VectorPreview extends React.Component {
   render() {
     const theme = 'osm-bright'
-    const url = `https://openmaptiles.tiles.data.gouv.fr/styles/${theme}/style.json`
+    const url = `https://openmaptiles.geo.data.gouv.fr/styles/${theme}/style.json`
 
     return (
       <Section title='Fond OpenMapTiles - vectoriel'>

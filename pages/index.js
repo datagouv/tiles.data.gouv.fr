@@ -34,14 +34,14 @@ const Previews = dynamic({
   modules: () => {
     const components = {
       VectorPreview: import('../components/home/previews/vector-preview'),
-      ImagePreview: import('../components/home/previews/image-preview')
+      RasterPreview: import('../components/home/previews/raster-preview')
     }
     return components
   },
-  render: (props, {VectorPreview, ImagePreview}) => (
+  render: (props, {VectorPreview, RasterPreview}) => (
     <Fragment>
       <VectorPreview />
-      <ImagePreview />
+      <RasterPreview />
     </Fragment>
   )
 })

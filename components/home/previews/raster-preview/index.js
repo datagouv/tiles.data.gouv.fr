@@ -2,7 +2,7 @@ import React from 'react'
 
 import BaseMapsPreview from '../base-maps-preview'
 
-import ImageTilesPreview from './image-tiles-preview'
+import RasterTilesPreview from './raster-tiles-preview'
 
 const themes = ['piano', 'forte']
 const languages = {
@@ -45,7 +45,7 @@ class ImagePreview extends React.Component {
         onSelectLanguage={this.handleLanguage}
         themes={themes}
         languages={Object.keys(languages)}>
-        <ImageTilesPreview url={url} />
+        <RasterTilesPreview url={url} />
       </BaseMapsPreview>
     )
   }

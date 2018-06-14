@@ -6,11 +6,25 @@ import mapStyle from 'mapbox-gl/dist/mapbox-gl.css'
 
 class RasterTilesPreview extends React.Component {
   componentDidMount() {
-    const {style} = this.props
+    const {url} = this.props
 
     this.map = new mapboxgl.Map({
       container: this.mapContainer,
-      style,
+      style: {
+        version: 8,
+        sources: {
+          'raster-tiles': {
+            type: 'raster',
+            tiles: [url.replace('{s}', 'a')],
+            attribution: '© Ministère des Affaires Étrangères © Etalab © Contributeurs OpenStreetMap'
+          }
+        },
+        layers: [{
+          id: 'simple-tiles',
+          type: 'raster',
+          source: 'raster-tiles'
+        }]
+      },
       center: [1.7191, 46.7111],
       zoom: 4.5
     })
@@ -40,7 +54,7 @@ class RasterTilesPreview extends React.Component {
 }
 
 RasterTilesPreview.propTypes = {
-  style: PropTypes.string.isRequired
+  url: PropTypes.string.isRequired
 }
 
 export default RasterTilesPreview

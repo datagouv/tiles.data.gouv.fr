@@ -45,7 +45,7 @@ const Selector = ({list, selected, handleSelect}) => (
 Selector.propTypes = {
   list: PropTypes.array.isRequired,
   selected: PropTypes.string.isRequired,
-  handleSelect: PropTypes.func.isRequired,
+  handleSelect: PropTypes.func.isRequired
 }
 
 export default Selector

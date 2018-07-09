@@ -6,8 +6,8 @@ import RasterTilesPreview from './raster-tiles-preview'
 
 const themes = ['piano', 'forte']
 const languages = {
-  français: '',
-  'français (haute résolution)': '@2x',
+  français: 'fr',
+  'français (haute résolution)': 'fr@2x',
   anglais: 'en',
   arabe: 'ar'
 }
@@ -34,7 +34,7 @@ class ImagePreview extends React.Component {
 
   render() {
     const {theme, language} = this.state
-    const url = `https://{s}.tiles.quaidorsay.fr/tile/${theme}${languages[language]}/{z}/{x}/{y}.png`
+    const url = `https://{s}.${theme}.tiles.data.gouv.fr/${languages[language]}/{z}/{x}/{y}.png`
 
     return (
       <BaseMapsPreview

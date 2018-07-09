@@ -8,11 +8,11 @@ import Selector from './selector'
 
 class BaseMapsPreview extends React.Component {
   render() {
-    const {title, url, selectedTheme, selectedLanguage, themes, languages, onSelectTheme, onSelectLanguage, reverse, children} = this.props
+    const {title, url, selectedTheme, selectedLanguage, themes, languages, onSelectTheme, onSelectLanguage, children} = this.props
 
     return (
       <Section title={title}>
-        <div className={`container ${reverse ? 'reverse' : ''}`}>
+        <div className='container'>
 
           <div className='form'>
             <h4>Choisir le thème</h4>
@@ -38,24 +38,19 @@ class BaseMapsPreview extends React.Component {
         <style jsx>{`
           .container {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
           }
 
           .map {
-            width: 50%;
+            width: 100%;
           }
 
           .preview {
             height: 70vh;
           }
 
-          .reverse {
-            flex-direction: row-reverse;
-          }
-
           .form {
-            min-width: 320px;
+            margin: 1em 0;
           }
 
           @media (max-width: 680px) {
@@ -94,16 +89,13 @@ BaseMapsPreview.propTypes = {
   selectedLanguage: PropTypes.string,
   onSelectLanguage: PropTypes.func,
 
-  reverse: PropTypes.bool,
-
   children: PropTypes.node.isRequired
 }
 
 BaseMapsPreview.defaultProps = {
   languages: null,
   selectedLanguage: null,
-  onSelectLanguage: () => {},
-  reverse: false
+  onSelectLanguage: () => {}
 }
 
 export default BaseMapsPreview

@@ -13,7 +13,7 @@ class VectorPreview extends React.Component {
 
     return (
       <Section title='Fond OpenMapTiles - vectoriel'>
-        <div className='container'>
+        <div>
           <div className='map'>
             <VectorTilesPreview style={url} />
           </div>
@@ -22,11 +22,6 @@ class VectorPreview extends React.Component {
           <TilesUrl url={url} />
         </div>
         <style jsx>{`
-          .container {
-            margin: 0 auto;
-            max-width: 600px;
-          }
-
           .map {
             height: 70vh;
           }

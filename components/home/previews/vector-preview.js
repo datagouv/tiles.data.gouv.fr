@@ -1,10 +1,10 @@
 import React from 'react'
 
-import Section from '../../../section'
+import Section from '../../section'
 
-import TilesUrl from '../tiles-url'
+import TilesUrl from './tiles-url'
 
-import VectorTilesPreview from './vector-tiles-preview'
+import Map from './map'
 
 class VectorPreview extends React.Component {
   render() {
@@ -15,7 +15,7 @@ class VectorPreview extends React.Component {
       <Section title='Fond OpenMapTiles - vectoriel'>
         <div>
           <div className='map'>
-            <VectorTilesPreview style={url} />
+            <Map style={url} {...this.props} />
           </div>
 
           <h4>URL du fond de carte</h4>

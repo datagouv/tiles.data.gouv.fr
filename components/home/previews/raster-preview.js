@@ -1,8 +1,8 @@
 import React from 'react'
 
-import BaseMapsPreview from '../base-maps-preview'
+import BaseMapsPreview from './base-maps-preview'
 
-import RasterTilesPreview from './raster-tiles-preview'
+import Map from './map'
 
 const themes = ['piano', 'forte']
 const languages = {
@@ -12,7 +12,7 @@ const languages = {
   arabe: 'ar'
 }
 
-class ImagePreview extends React.Component {
+class RasterPreview extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -46,10 +46,10 @@ class ImagePreview extends React.Component {
         onSelectLanguage={this.handleLanguage}
         themes={themes}
         languages={Object.keys(languages)}>
-        <RasterTilesPreview url={url} />
+        <Map url={url} {...this.props} />
       </BaseMapsPreview>
     )
   }
 }
 
-export default ImagePreview
+export default RasterPreview

@@ -1,50 +1,11 @@
-import React, {Fragment} from 'react'
-import dynamic from 'next/dynamic'
+import React from 'react'
 
 import Page from '../layouts/main'
-import withWebGl from '../components/hoc/with-web-gl'
 
 import Hero from '../components/hero'
-import Loader from '../components/loader'
 
 import Subscribe from '../components/home/subscribe'
-import Section from '../components/section'
-
-const loading = (
-  <Section title=' '>
-    <div className='centered'>
-      <Loader />
-      <p>Chargement…</p>
-      <style jsx>{`
-          .centered {
-            height: 100px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-          }
-        `}</style>
-    </div>
-  </Section>
-)
-
-const Previews = dynamic({
-  ssr: false,
-  loading: () => loading,
-  modules: () => {
-    const components = {
-      VectorPreview: import('../components/home/previews/vector-preview'),
-      RasterPreview: import('../components/home/previews/raster-preview')
-    }
-    return components
-  },
-  render: (props, {VectorPreview, RasterPreview}) => (
-    <Fragment>
-      <VectorPreview />
-      <RasterPreview />
-    </Fragment>
-  )
-})
+import Previews from '../components/home/previews'
 
 const Home = () => (
   <Page>
@@ -56,4 +17,4 @@ const Home = () => (
   </Page>
 )
 
-export default withWebGl(Home)
+export default Home

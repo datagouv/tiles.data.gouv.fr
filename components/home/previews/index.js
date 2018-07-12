@@ -49,7 +49,7 @@ class Previews extends React.Component {
     super(props)
     this.state = {
       center: [1.7191, 46.7111],
-      zoom: 4.5
+      zoom: 4
     }
 
     this.handleCenter = this.handleCenter.bind(this)
